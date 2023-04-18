@@ -1,9 +1,13 @@
 package com.self.learn.chatbot.api;
+import cn.hutool.core.text.UnicodeUtil;
 import cn.hutool.http.HttpRequest;
 import cn.hutool.http.HttpResponse;
 import cn.hutool.http.HttpUtil;
 import com.alibaba.fastjson.JSON;
 import org.junit.Test;
+
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 
 /**
  * @author wc
@@ -24,10 +28,18 @@ public class ApiTest {
         request.contentType("application/json; charset=UTF-8");
 
         HttpResponse response = request.execute();
+        System.out.println(response.body());
+        String s = UnicodeUtil.toString(response.body());
+        System.out.println(s);
+        System.out.println(JSON.parseObject(response.body()));
+//        response.charset(StandardCharsets.UTF_8);
 
         if (response.isOk()) {
-            String body = response.body();
-            System.out.println(JSON.toJSONString(body));
+//            byte[] bytes = response.bodyBytes();
+//            String s = new String(bytes, StandardCharsets.UTF_8);
+//            String body = response.body();
+//            System.out.println(response);
+//            System.out.println(JSON.toJSONString(s));
         }
     }
 
