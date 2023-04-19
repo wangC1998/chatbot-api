@@ -46,14 +46,15 @@ public class ApiTest {
     @Test
     public void answerQuestion() {
 
-        HttpRequest request = HttpUtil.createPost("https://api.zsxq.com/v2/topics/814221225112812/answer");
+        HttpRequest request = HttpUtil.createPost("https://api.zsxq.com/v2/topics/814221481421422/answer");
         request.contentType("application/json; charset=UTF-8");
         request.cookie("zsxqsessionid=49af21bf739fab78cffeae6b0fa84fad; zsxq_access_token=0058B458-94FD-804D-B42A-2D08D7457F3E_F230FC31B0A19C9A; abtest_env=product");
-        request.body("{\"req_data\":{\"text\":\"我不会,哈哈哈哈\\n\",\"image_ids\":[]}}");
+        request.body("{\"req_data\":{\"text\":\"测试回答\\n\",\"image_ids\":[]}}");
         HttpResponse response = request.execute();
+        response.charset(StandardCharsets.UTF_8);
 
         if (response.isOk()) {
-            System.out.println(JSON.toJSONString(response.body()));
+            System.out.println(JSON.parseObject(response.body()));
         }
 
 
