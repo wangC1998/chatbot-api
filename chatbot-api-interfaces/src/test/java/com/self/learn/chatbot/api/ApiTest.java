@@ -59,4 +59,46 @@ public class ApiTest {
 
 
     }
+
+    @Test
+    public void chatApiTest() {
+        /*
+        curl https://api.openai.com/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer $OPENAI_API_KEY" \
+  -d '{
+    "model": "gpt-3.5-turbo",
+    "messages": [{"role": "user", "content": "Hello!"}]
+  }'
+
+         */
+
+        String response = HttpUtil.createPost("https://api.openai.com/v1/chat/completions")
+                .contentType("application/json")
+                .header("Authorization", "Bearer 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")
+                .body("{\n" +
+                        "    \"model\": \"gpt-3.5-turbo\",\n" +
+                        "    \"messages\": [{\"role\": \"user\", \"content\": \"帮我写一个Java单例模式\"}]\n" +
+                        "  }")
+                .execute().body();
+
+
+        System.out.println(response);
+
+
+
+
+    }
+
+
+    /*
+    tool:https://he3.app/zh/
+    req:{
+    "model": "gpt-3.5-turbo",
+    "messages": [{"role": "user", "content": "帮我写一个Java单例模式"}]
+  }
+
+    resp: {"id":"chatcmpl-78I5pUj2nKIqwrgLwOUvs5bMauEPW","object":"chat.completion","created":1682210529,"model":"gpt-3.5-turbo-0301","usage":{"prompt_tokens":18,"completion_tokens":258,"total_tokens":276},"choices":[{"message":{"role":"assistant","content":"以下是一个Java单例模式的实现例子：\n\n```java\npublic class Singleton {\n  // 私有静态实例\n  private static Singleton instance;\n\n  // 私有构造方法，防止外部实例化\n  private Singleton() {}\n\n  // 公有静态方法，获取实例\n  public static Singleton getInstance() {\n    // 判断是否已有实例，如果没有则创建\n    if (instance == null) {\n      instance = new Singleton();\n    }\n    return instance;\n  }\n\n  // 其他公有方法\n  public void doSomething() {\n    // 实现某些功能\n  }\n}\n```\n\n说明：\n\n- 将构造方法私有化，确保外部无法实例化，只能通过静态方法getInstance()获取实例。\n- 用一个私有静态变量instance来存储实例，确保全局唯一。\n- 在getInstance()方法中，如果实例还不存在，则创建，否则直接返回现有实例。\n- 其他公有方法可以在实例上调用，实现某些功能。"},"finish_reason":"stop","index":0}]}
+
+     */
 }
