@@ -4,10 +4,16 @@ import cn.hutool.http.HttpRequest;
 import cn.hutool.http.HttpResponse;
 import cn.hutool.http.HttpUtil;
 import com.alibaba.fastjson.JSON;
+import com.self.learn.chatbot.api.domain.ai.model.req.AiReq;
+import com.self.learn.chatbot.api.domain.ai.model.res.AiResp;
+import com.self.learn.chatbot.api.domain.ai.model.vo.Message;
 import org.junit.Test;
 
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * @author wc
@@ -73,17 +79,24 @@ public class ApiTest {
 
          */
 
+        AiReq aiReq = new AiReq();
+        aiReq.setModel("gpt-3.5-turbo");
+        Message message = new Message();
+        message.setContent("如何解析梦境");
+        message.setRole("user");
+        aiReq.setMessages(Arrays.asList(message));
         String response = HttpUtil.createPost("https://api.openai.com/v1/chat/completions")
                 .contentType("application/json")
-                .header("Authorization", "Bearer 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")
-                .body("{\n" +
-                        "    \"model\": \"gpt-3.5-turbo\",\n" +
-                        "    \"messages\": [{\"role\": \"user\", \"content\": \"帮我写一个Java单例模式\"}]\n" +
-                        "  }")
+                .header("Authorization", "Bearer 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")
+                .body(JSON.toJSONString(aiReq))
                 .execute().body();
 
+        AiResp aiResp = JSON.parseObject(response, AiResp.class);
 
-        System.out.println(response);
+        System.out.println(JSON.toJSONString(aiResp));
+
+
+
 
 
 

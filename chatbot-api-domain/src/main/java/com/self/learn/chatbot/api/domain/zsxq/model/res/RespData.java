@@ -1,8 +1,8 @@
 /**
   * Copyright 2023 bejson.com 
   */
-package com.self.learn.chatbot.api.domain.model.res;
-import com.self.learn.chatbot.api.domain.model.vo.Topics;
+package com.self.learn.chatbot.api.domain.zsxq.model.res;
+import com.self.learn.chatbot.api.domain.zsxq.model.vo.Topics;
 
 import java.util.List;
 

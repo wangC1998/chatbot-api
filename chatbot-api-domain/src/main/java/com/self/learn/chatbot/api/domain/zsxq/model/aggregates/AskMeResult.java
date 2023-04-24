@@ -1,5 +1,5 @@
-package com.self.learn.chatbot.api.domain.model.aggregates;
-import com.self.learn.chatbot.api.domain.model.res.RespData;
+package com.self.learn.chatbot.api.domain.zsxq.model.aggregates;
+import com.self.learn.chatbot.api.domain.zsxq.model.res.RespData;
 
 public class AskMeResult {
     private boolean succeeded;

@@ -1,12 +1,12 @@
 package com.self.learn.chatbot.api;
 
 import cn.hutool.core.date.DateUtil;
-import com.self.learn.chatbot.api.domain.model.aggregates.AnswerQuestion;
-import com.self.learn.chatbot.api.domain.model.aggregates.AskMeResult;
-import com.self.learn.chatbot.api.domain.model.req.AnswerReq;
-import com.self.learn.chatbot.api.domain.model.vo.Topics;
-import com.self.learn.chatbot.api.domain.service.IZsxqApi;
-import com.self.learn.chatbot.api.domain.service.impl.ZsxqApi;
+import com.self.learn.chatbot.api.domain.zsxq.model.aggregates.AnswerQuestion;
+import com.self.learn.chatbot.api.domain.zsxq.model.aggregates.AskMeResult;
+import com.self.learn.chatbot.api.domain.zsxq.model.req.AnswerReq;
+import com.self.learn.chatbot.api.domain.zsxq.model.vo.Topics;
+import com.self.learn.chatbot.api.domain.zsxq.service.IZsxqApi;
+import com.self.learn.chatbot.api.domain.zsxq.service.impl.ZsxqApi;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Value;
@@ -14,7 +14,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
 import java.util.List;
 
 

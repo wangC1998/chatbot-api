@@ -1,14 +1,12 @@
-package com.self.learn.chatbot.api.domain.service.impl;
+package com.self.learn.chatbot.api.domain.zsxq.service.impl;
 
-import cn.hutool.core.text.UnicodeUtil;
 import cn.hutool.http.HttpRequest;
 import cn.hutool.http.HttpResponse;
 import cn.hutool.http.HttpUtil;
 import com.alibaba.fastjson.JSON;
-import com.self.learn.chatbot.api.domain.model.aggregates.AnswerQuestion;
-import com.self.learn.chatbot.api.domain.model.aggregates.AskMeResult;
-import com.self.learn.chatbot.api.domain.model.req.AnswerReq;
-import com.self.learn.chatbot.api.domain.service.IZsxqApi;
+import com.self.learn.chatbot.api.domain.zsxq.model.aggregates.AnswerQuestion;
+import com.self.learn.chatbot.api.domain.zsxq.model.aggregates.AskMeResult;
+import com.self.learn.chatbot.api.domain.zsxq.service.IZsxqApi;
 import org.springframework.stereotype.Service;
 
 import java.nio.charset.StandardCharsets;

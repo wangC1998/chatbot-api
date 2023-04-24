@@ -1,7 +1,7 @@
 /**
   * Copyright 2023 bejson.com 
   */
-package com.self.learn.chatbot.api.domain.model.vo;
+package com.self.learn.chatbot.api.domain.zsxq.model.vo;
 
 /**
  * Auto-generated: 2023-04-18 21:26:2

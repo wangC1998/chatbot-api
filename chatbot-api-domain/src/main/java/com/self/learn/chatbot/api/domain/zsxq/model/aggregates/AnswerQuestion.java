@@ -1,6 +1,6 @@
-package com.self.learn.chatbot.api.domain.model.aggregates;
+package com.self.learn.chatbot.api.domain.zsxq.model.aggregates;
 
-import com.self.learn.chatbot.api.domain.model.req.AnswerReq;
+import com.self.learn.chatbot.api.domain.zsxq.model.req.AnswerReq;
 
 public class AnswerQuestion {
 
