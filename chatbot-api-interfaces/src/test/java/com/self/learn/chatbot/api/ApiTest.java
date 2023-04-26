@@ -82,12 +82,12 @@ public class ApiTest {
         AiReq aiReq = new AiReq();
         aiReq.setModel("gpt-3.5-turbo");
         Message message = new Message();
-        message.setContent("如何解析梦境");
+        message.setContent("作为一个专业的Java工程师,你是如何处理高并发的");
         message.setRole("user");
         aiReq.setMessages(Arrays.asList(message));
         String response = HttpUtil.createPost("https://api.openai.com/v1/chat/completions")
                 .contentType("application/json")
-                .header("Authorization", "Bearer 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")
+                .header("Authorization", "Bearer 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")
                 .body(JSON.toJSONString(aiReq))
                 .execute().body();
 
