@@ -1,7 +1,6 @@
 package com.self.learn.chatbot.api.domain.ai.model.req;
 
 import com.self.learn.chatbot.api.domain.ai.model.vo.Message;
-
 import java.util.List;
 
 public class AiReq {

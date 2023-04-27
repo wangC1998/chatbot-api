@@ -35,17 +35,9 @@ public class ZsxqApi implements IZsxqApi {
         HttpRequest request = HttpUtil.createGet("https://api.zsxq.com/v2/groups/"+groups+"/topics?scope=unanswered_questions&count=20");
         request.cookie(cookie);
         request.contentType("application/json; charset=UTF-8");
-
         HttpResponse response = request.execute();
-        AskMeResult askMeResult = null;
 
-        if (response.isOk()) {
-            askMeResult = JSON.parseObject(response.body(), AskMeResult.class);
-
-        } else {
-            // TODO: 2023/4/18 本次请求错误,请进行错误排查
-        }
-
+        AskMeResult askMeResult = JSON.parseObject(response.body(), AskMeResult.class);
 
         return askMeResult;
 

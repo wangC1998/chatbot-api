@@ -18,6 +18,13 @@ public class AskMeResult {
         return respData;
     }
 
+    public static AskMeResult error() {
+        AskMeResult res = new AskMeResult();
+        res.setRespData(null);
+        res.setSucceeded(false);
+        return res;
+    }
+
 
 
 
